@@ -66,29 +66,23 @@ void bresenhamCircle(int cx, int cy, int r, int col = WHITE)
 
 void dda(int x1, int y1, int x2, int y2, int col = WHITE)
 {
-    float dlx = x2 - x1;
-    float dly = y2 - y1;
+    float dx = x2 - x1;
+    float dy = y2 - y1;
 
-    int L = (int)fmax(fabs(dlx), fabs(dly));
+    float steps = max(abs(dx), abs(dy));
 
-    if (L == 0)
-    {
-        putpixel(x1, y1, col);
-        return;
-    }
-
-    float dx = dlx / L;
-    float dy = dly / L;
+    float xinc = dx / steps;
+    float yinc = dy / steps;
 
     float x = x1;
     float y = y1;
 
-    for (int i = 0; i <= L; i++)
+    for(int i = 0; i <= steps; i++)
     {
-        putpixel((int)lround(x), (int)lround(y), col);
+        putpixel(round(x), round(y), col);
 
-        x += dx;
-        y += dy;
+        x = x + xinc;
+        y = y + yinc;
     }
 }
 

@@ -70,6 +70,8 @@ void seedFill(int x, int y, int oldColor, int newColor)
     seedFill(x - 1, y, oldColor, newColor);
     seedFill(x, y + 1, oldColor, newColor);
     seedFill(x, y - 1, oldColor, newColor);
+
+    delay(50);
 }
 
 int main()

@@ -15,15 +15,6 @@ void plotCircle(int xc, int yc, int x, int y)
     putpixel(xc + y, yc - x, WHITE);
     putpixel(xc - y, yc - x, WHITE);
 
-    putpixel(x, y, WHITE);
-    putpixel(-x, y, WHITE);
-    putpixel(x, -y, WHITE);
-    putpixel(-x, -y, WHITE);
-
-    putpixel(y, x, WHITE);
-    putpixel(-y, x, WHITE);
-    putpixel(y, -x, WHITE);
-    putpixel(-y, -x, WHITE);
 }
 
 int main()
